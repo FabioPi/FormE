@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form name="frmAnagrafica" x-table="Anagrafica" x-layout="desktops">
+
+	<row x-col="12" style="background-color:powderblue">
+	
+		<boxInput x-col="1">
+			<label>Avatar</label>
+     		<DBIcon style="width:150px; height:150px" x-descr="[drag here !!]">ANAAvatar2</DBIcon>
+		</boxInput>
+		
+		<row x-col="10" style="background-color:powderblue">
+		
+			<boxInput x-col="1">
+				<label>ID</label>
+				<DBInput>ANAId</DBInput> 
+			</boxInput>
+		
+			<boxInput x-col="2">
+				<label>Nome</label> 
+				<DBInput2 placeholder="Nome" x-image="user">ANANome</DBInput2> 
+			</boxInput>
+		 
+			<boxInput x-col="2">
+				<label>Cognome</label>
+				<DBInput placeholder="Cognome" required="required">ANACogno
+					<help x-title="Cognome">Inserisci il Cognome ...</help>
+				</DBInput> 
+			</boxInput>
+		
+			<boxInput x-col="2">
+				<label>Data di Nascita</label>
+				<DBDateIT>ANADtNasc</DBDateIT> 
+			</boxInput>
+			
+		</row>	
+		
+		<row x-col="10" style="background-color:powderblue">
+		
+			<boxInput x-col="2">
+				<label>Continente</label>
+				<DBComboBoxCascade size="1" placeholder="Continenti" x-cbCascade="grpAA" x-valid="showMap">COId
+						<DBOption x-tbRef="Continenti" x-tbKey="COId" x-tbDescr="CODescr" x-tbOrder="CODescr"></DBOption>
+				</DBComboBoxCascade>	
+			</boxInput>
+	
+			<boxInput x-col="2">
+				<label>Stato</label>
+				<DBComboBoxCascade size="1" placeholder="Stato" x-cbCascade="grpAA" required="required" x-valid="showMap">STId
+					<DBOption x-tbRef="Stato" x-tbKey="STId" x-tbDescr="STDescr" x-tbOrder="STDescr" x-tbParentKey="COId"></DBOption>
+				</DBComboBoxCascade>	
+			</boxInput>
+			
+			<boxInput x-col="3">
+				<label>Citta</label>
+				<DBComboBoxCascade size="1" placeholder="Citta" x-cbCascade="grpAA" x-valid="showMap">CTId
+					<DBOption x-tbRef="Citta" x-tbKey="CTId" x-tbDescr="CTDescr" x-tbOrder="CTDescr" x-tbParentKey="STId"></DBOption>
+				</DBComboBoxCascade>	
+			</boxInput>
+			
+		</row>	
+		
+		<row x-col="10" style="background-color:powderblue">
+		
+			<boxInput x-col="2">
+				<label>Dug</label>
+				<DBComboBox size="1" placeholder="Dug">DUGId
+					<DBOption x-tbRef="Dug" x-tbKey="DUGId" x-tbDescr="DUGDescr"></DBOption>
+				</DBComboBox>	
+			</boxInput>
+	
+			<boxInput x-col="5">
+				<label>Via</label>
+				<DBInput placeholder="Via" x-valid="showMap">ANAVia
+				<help x-title="Via">Inserisci l'indirizzo " correttamente senza specificare via o piazza, etcc.. poi inerisci la virgola ed il numero civico e scala, es: Aldo Rossi, 67/B</help>
+				</DBInput> 
+			</boxInput>
+			
+		</row>	
+		
+	</row>
+
+	<row x-col="12" style="background-color:LightSalmon">
+	
+		<boxInput x-col="3">
+			<label>Mappa Bing</label>
+			<DBMapBing style="width:400px; height:400px">ANAMap</DBMapBing> 
+		</boxInput>
+		
+		<row x-col="9">
+		
+			<boxInput x-col="2">
+				<label>Data di Iscrizione</label>
+				<DBDateEN data-defaultViewDate="today">ANADtIscr</DBDateEN> 
+			</boxInput>
+			
+			<boxInput x-col="4">
+				<label>Range IP</label>
+				<block>
+					<inline>
+						<DBInput size="20" data-mask='099.099.099.099' placeholder="From IP">IPStart</DBInput> 
+						<DBInput size="20" data-mask='099.099.099.099' placeholder="To IP">IPEnd
+							<help x-title="IP">Inserisci gli IP avendo cura di rispettare i valori !!!</help>
+						</DBInput>
+					</inline>
+				</block>
+			</boxInput>
+
+		</row>
+
+		<row x-col="9">
+		
+			<boxInput x-col="3">
+				<label>Music</label>
+				<block>
+					<inline>
+						<DBCheck x-descr="Rock"    x-states="Rock|rrr">ANAmuRock</DBCheck>
+						<DBCheck x-descr="Disco"   x-states="Disco|ddd">ANAmuDisco</DBCheck>
+						<DBCheck x-descr="Classica" x-states="Class|ccc">ANAmuClas</DBCheck>
+					</inline>
+				</block>
+			</boxInput>
+			
+			<boxInput x-col="2">
+				<label>Lingue</label>
+				<block>
+					<inline>
+						<DBCheck x-descr="Inglese">ANAlpENG</DBCheck>
+						<DBCheck x-descr="Spagnolo">ANAlpESP</DBCheck>
+					</inline>
+				</block>
+			</boxInput>
+			
+		</row>	
+
+		<row x-col="9">
+		
+			<boxInput x-col="7">
+				<label>Tipo</label>
+				<block>
+					<inline>
+						<DBRadio>ANATipo
+							<option value="CA">Caucasico</option>
+							<option value="AS">Asiatico</option>
+							<option value="AF">Africano</option>
+							<option value="MO">Mongolico</option>
+							<option value="AM">Americano</option>
+						</DBRadio>	
+					</inline>
+				</block>
+			</boxInput>
+		</row>	
+		
+		<row x-col="9">
+			<boxInput x-col="5">
+				<label>Note</label>
+				<DBTextArea rows="8" cols="200">ANANote
+					<help x-title="Note">Inserisci le principali caratteristiche della persona </help>
+				</DBTextArea>
+			</boxInput>
+			<boxInput x-col="2">
+				<label>Interessi</label>
+				<DBComboBox size="5" multiple="multiple">ANAInteressi
+					<DBOption x-tbRef="Interessi" x-tbKey="INTId" x-tbDescr="INTDescr" x-tbOrder="INTDescr"></DBOption>
+				</DBComboBox> 
+			</boxInput>
+		</row>	
+	
+	</row>
+	
+	<row x-col="12" style="background-color:LightSalmon">
+	
+		<boxInput x-col="3">
+			<label>File1</label>
+			<DBInputFile placeholder="File">linkFile1  <!-- upload in directory default (upload) x-upload="" -->
+				<help x-title="File">Insert file</help>
+			</DBInputFile> 
+		</boxInput>
+			
+		<boxInput x-col="3">
+			<label>File2</label>
+			<DBInputFile placeholder="File" x-upload="upload2">linkFile2  <!-- upload in x-upload=directory upload2 -->
+				<help x-title="File">Insert file</help>
+			</DBInputFile> 
+		</boxInput>
+		
+		<boxInput x-col="3">
+			<label>Search...</label>
+			<DBSearch placeholder="Search..." x-valid="showSearch" x-SearchTable='Stato' x-SearchField='STDescr' x-SearchReturn='STDescr'>ANASearch
+				<DBSearchReturn>
+					<span>
+						<img src="img/@STFlag@"/>  @STDescr@
+					</span>
+				</DBSearchReturn>  
+			  <help x-title="Search">Cerca nelle Citta</help>
+			</DBSearch> 
+		</boxInput>
+
+			
+	</row>
+
+	<row x-col="12" style="background-color:DarkSeaGreen">
+	
+		<boxInput x-col="12">
+			<inline x-col="5"></inline>
+			<DBApply x-callback="myFuncExit">Salva</DBApply>
+		</boxInput>
+		
+	</row>
+	
+</form>
