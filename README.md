@@ -1,5 +1,5 @@
 # FormE
-FormEasy (Build your Form in easy way with XML)
+FormEasy (Build your Form in easy way with XML)<br/>
 
 Manage your MySql database with FormE, and create your own form only manipulating xml files.
 Lot of component, help you to write your form in easy mode.
