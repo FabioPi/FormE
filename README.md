@@ -93,4 +93,12 @@ OR
 ```
 
 
+## Input Type 
+
+### General information
+
+- in input tag, the "name" and "id", is assigned automatically by system. Is not possible assign your own.
+- attribute "x-" are particulary of the system, and add information at the corresponding HTML tag
+
+
 
