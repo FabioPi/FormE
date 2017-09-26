@@ -1,11 +1,11 @@
-# FormE
 FormEasy (Build your Form in easy way with XML)
 
-Manage your MySql database with FormE, and create your own form only manipulating xml files.
+FormE is a php class for manage tables in MySql Databases. Create your own form only manipulating xml files.
 Lot of component, help you to write your form in easy mode.
 
 Input, password, date, checkbox, radio, Bing map, linked combobox and so on in Bootstrap framework, use template for personalize input.
 
+You can see [examples](http://www.shooney.com/forme/index.php) here. 
 
 ## Usage
 ### Create your xml file :
