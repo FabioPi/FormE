@@ -18,6 +18,7 @@ You can see [examples](http://www.shooney.com/forme/index.php) here.
 
 ```<?xml version="1.0" encoding="UTF-8"?>```
 
+
 ### Add "form" Tag :
 
 ```<form name="frmAnagrafica" class="form-horizontal" x-table="Anagrafica" x-layout="desktops">```
@@ -26,7 +27,9 @@ You can see [examples](http://www.shooney.com/forme/index.php) here.
 - x-table = table of mysql database
 - x-layout = phones (col-xs-), tablets (col-sm-), desktops (col-md-), larger (col-lg-)
 
+
 ### Draw your grid :
+form type "block"
 ```
 <row x-col="10" style="..." class="..." >
    <boxInput x-col="2" style="..." class="...">
@@ -50,7 +53,20 @@ You can see [examples](http://www.shooney.com/forme/index.php) here.
    </boxInput>
 </row>
 ```
+form type "horizontal" is quite different 
+```
+<boxInput x-col="9">
+	<label x-col="2">Avatar</label>
+	<DBIcon x-col="3" style="width:150px; height:150px">ANAAvatar2</DBIcon>
+</boxInput>
+
+<boxInput x-col="9">
+	<label x-col="2">ID</label>
+	<DBInput x-col="1">ANAId</DBInput> 
+</boxInput>
+```
 optionally use "style" and/or "class" for personalize yours tags 
+
 
 ### Insert your Input Type in boxInput, examples:
 
