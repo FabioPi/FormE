@@ -21,12 +21,26 @@ Add "form" Tag :
 
 Draw your grid :
 ```
-<row x-col="10" style="background-color:powderblue">
-   ......
-   ......
+<row x-col="10" style="..." class="..." >
+   <boxInput x-col="2" style="..." class="...">
+   </boxinput>
+   <boxInput x-col="3">
+   </boxinput>
+   <boxInput x-col="5">
+   </boxinput>
 </row>	
-<row x-col="10" style="background-color:powderblue">
-   ......
-   ......
+
+<row x-col="10" style="...">
+   <boxInput x-col="2">
+   </boxinput>
+   <boxInput x-col="2" style="..." class="...">
+   </boxinput>
+   <boxInput x-col="2">
+   </boxinput>
+   <boxInput x-col="2" class="...">
+   </boxinput>
+   <boxInput x-col="2">
+   </boxinput>
 </row>
 ```
+optionally use "style" and/or "class" for personalize yours tag 
