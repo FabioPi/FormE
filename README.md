@@ -8,7 +8,13 @@ Input, password, date, checkbox, radio, Bing map, linked combobox and so on in B
 You can see [examples](http://www.shooney.com/forme/index.php) here. 
 
 ## Usage
-### Create your xml file :
+
+### First of all: 
+- Look at main_v3.php or main_v4.php for .CSS, .JS, linked file and .php to include in your main page (v3 and v4 referres to Bootstrap 3 and Bootstrap 4[alpha] frameworks).
+- Create an instance of a class: 
+```          $myForm = new Forms("myXML.xml", "ID=1");  ```
+
+### Create your xml file:
 
 ```<?xml version="1.0" encoding="UTF-8"?>```
 
