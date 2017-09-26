@@ -100,5 +100,26 @@ OR
 - in input tag, the "name" and "id", is assigned automatically by system. Is not possible assign your own.
 - attribute "x-" are particulary of the system, and add information at the corresponding HTML tag
 
+### Label:
+```
+   <label>Name</label>
+```
+label of Input
+
+### DBInput
+```
+   <DBInput placeholder="Name" required="required" >ANAName
+     <help x-title="Name title">Insert Name ...</help>
+   </DBInput> 
+				
+   <DBInput size="20" data-mask='099.099.099.099' placeholder="To IP">IPEnd
+     <help x-title="IP">Insert IP in range of 192.168.0.1-192.168.0.254 !!!</help>
+   </DBInput>
+```
+- placeholder : placeholder of input (optional)
+- required : "required", if specified and not present in form, display the text in "help" tag (optional)
+- x-valid : x-valid="test" a callable javascript function "test(this)" when change the value of tag. (optional)
+- data-mask : refer to [igorescobar - plugin](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html) (optional)
+- ANAName/IPEnd: Corresponding column in MySql Table specified in form->x-table
 
 
