@@ -1,7 +1,8 @@
 # FormE
 FormEasy (Build your Form in easy way with XML)
 
-Manage your MySql database with FormE, and create your own form only manipulating xml files.Lot of component, help you to write your form in easy mode.
+Manage your MySql database with FormE, and create your own form only manipulating xml files.
+Lot of component, help you to write your form in easy mode.
 
 Input, password, date, checkbox, radio, Bing map, linked combobox and so on in Bootstrap framework, use template for personalize input.
 
@@ -43,7 +44,7 @@ Input, password, date, checkbox, radio, Bing map, linked combobox and so on in B
    </boxInput>
 </row>
 ```
-optionally use "style" and/or "class" for personalize yours tag 
+optionally use "style" and/or "class" for personalize yours tags 
 
 ### Insert your Input Type in boxInput, examples:
 
@@ -58,7 +59,11 @@ OR
 <label>Name</label> 
 <DBInput2 placeholder="Name" x-image="user">ANAName</DBInput2> 
 ```
-
+OR
+```
+<label>Birthday</label>
+<DBDateIT>ANADtNasc</DBDateIT> 
+```
 
 
 
