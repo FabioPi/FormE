@@ -49,20 +49,24 @@ optionally use "style" and/or "class" for personalize yours tags
 ### Insert your Input Type in boxInput, examples:
 
 ```
-<label>Name</label>
-<DBInput placeholder="Name" required="required">ANAName
+  <label>Name</label>
+  <DBInput placeholder="Name" required="required">ANAName
 	<help x-title="Name">Insert the Name...</help>
-</DBInput> 
+  </DBInput> 
 ```
 OR
 ```
-<label>Name</label> 
-<DBInput2 placeholder="Name" x-image="user">ANAName</DBInput2> 
+  <label>Name</label> 
+  <DBInput2 placeholder="Name" x-image="user">ANAName</DBInput2> 
 ```
 OR
 ```
-<label>Birthday</label>
-<DBDateIT>ANADtNasc</DBDateIT> 
+  <label>Birthday</label>
+  <DBDateIT>ANADtNasc</DBDateIT> 
+```
+... FINALLY insert DBApply tag  for send data in MySql Database 
+```
+  <DBApply x-callback="myFuncExit">Salva</DBApply>
 ```
 
 
