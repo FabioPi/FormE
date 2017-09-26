@@ -15,7 +15,7 @@ You can see [examples](http://www.shooney.com/forme/index.php) here.
 ```          $myForm = new Forms("myXML.xml", "ID=1");  ```
 
 
-### Create your xml file:
+### Then create your xml (myXML.xml) file:
 
 ```<?xml version="1.0" encoding="UTF-8"?>```
 
