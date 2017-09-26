@@ -66,7 +66,7 @@ OR
 ```
 ... FINALLY insert DBApply tag  for send data in MySql Database 
 ```
-  <DBApply x-callback="myFuncExit">Salva</DBApply>
+  <DBApply>Salva</DBApply>
 ```
 
 
