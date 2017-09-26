@@ -14,6 +14,7 @@ You can see [examples](http://www.shooney.com/forme/index.php) here.
 - Create an instance of a class: 
 ```          $myForm = new Forms("myXML.xml", "ID=1");  ```
 
+
 ### Create your xml file:
 
 ```<?xml version="1.0" encoding="UTF-8"?>```
