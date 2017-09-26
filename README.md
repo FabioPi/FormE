@@ -1,4 +1,4 @@
-FormEasy (Build your Form in easy way with XML)
+# FormEasy (Build your Form in easy way with XML)
 
 FormE is a php class for manage tables in MySql Databases. Create your own form only manipulating xml files.
 Lot of component, help you to write your form in easy mode.
