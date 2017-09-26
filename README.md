@@ -7,11 +7,11 @@ Input, password, date, checkbox, radio, Bing map, linked combobox and so on in B
 
 
 ## Usage
-###Create your xml file :
+### Create your xml file :
 
 ```<?xml version="1.0" encoding="UTF-8"?>```
 
-###Add "form" Tag :
+### Add "form" Tag :
 
 ```<form name="frmAnagrafica" class="form-horizontal" x-table="Anagrafica" x-layout="desktops">```
 - name = name of form 
@@ -19,28 +19,46 @@ Input, password, date, checkbox, radio, Bing map, linked combobox and so on in B
 - x-table = table of mysql database
 - x-layout = phones (col-xs-), tablets (col-sm-), desktops (col-md-), larger (col-lg-)
 
-###Draw your grid :
+### Draw your grid :
 ```
 <row x-col="10" style="..." class="..." >
    <boxInput x-col="2" style="..." class="...">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="3">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="5">
-   </boxinput>
+   </boxInput>
 </row>	
 
 <row x-col="10" style="...">
    <boxInput x-col="2">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="2" style="..." class="...">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="2">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="2" class="...">
-   </boxinput>
+   </boxInput>
    <boxInput x-col="2">
-   </boxinput>
+   </boxInput>
 </row>
 ```
 optionally use "style" and/or "class" for personalize yours tag 
+
+### Insert your Input Type in boxInput, examples:
+
+```
+<label>Name</label>
+<DBInput placeholder="Name" required="required">ANAName
+	<help x-title="Name">Insert the Name...</help>
+</DBInput> 
+```
+OR
+```
+<label>Name</label> 
+<DBInput2 placeholder="Name" x-image="user">ANAName</DBInput2> 
+```
+
+
+
+
