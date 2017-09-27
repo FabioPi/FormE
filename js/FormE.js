@@ -53,14 +53,15 @@
 		
 		$( "#__AlertForm" ).remove();
 		
-		var card='<div id="__AlertForm" style="display:none; z-index:1000; position: absolute; width: 390px; top:40%; left:40%;" class="alert '+messClass+'" role="alert">';
+		// var card='<div id="__AlertForm" style="display:none; z-index:1000; position: absolute; width: 390px; top:40%; left:40%;" class="alert '+messClass+'" role="alert">';
+		var card='<div id="__AlertForm" style="display:none; z-index:1000; position:fixed; width:390px; top:40%; left:40%;" class="alert '+messClass+'" role="alert">';
 		card += '<strong>'+messTitle+'</strong>';
 		card += ' '+textMess;
 		card += '<div>';
-
-		$(card).appendTo("#"+frmName);
 		
-		// $( "#__AlertForm" ).show().hide( timeMess );
+		$(card).appendTo("#box_"+frmName);
+		// $(card).appendTo('body');
+		
 		options = { to: { width: 280, height: 185 } };
 		$( "#__AlertForm" ).show( "fade", options, 500, callBackAlert );
 	}
