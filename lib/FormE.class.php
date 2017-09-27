@@ -189,7 +189,7 @@ class Forms extends baseContainer{
 	var $XML = "", $cHTML=""; 
 	var $qTable, $tableName = "", $Table = "", $dataTable = Array(), $pkFields = Array(); 
 	var $callFuncForm = "", $callFuncFormParam = "", $callFuncPost="";
-	var $iCascade=0, $aCascade=Array();
+	var $iCascade=-1, $aCascade=Array();
 	
 	public function __construct($xml, $qTable="false") {
 		// qTable = False (new record)
@@ -217,6 +217,7 @@ class Forms extends baseContainer{
 		// implementare x-layouts  con -> xs (phones), sm (tablets), md (desktops), and lg (larger desktops). 
 		
  		$this->addAttributes("class", "container-fluid");
+ 		$this->addAttributes("style", "position:relative");
 		// $this->addAttributes("class", "form-horizontal");
 		$attr=$this->AttributesToString();
 
@@ -227,10 +228,9 @@ class Forms extends baseContainer{
 		if (!empty($this->callFuncForm)){ $this->callbackData(); }
 	
 		$this->cHTML .= "\n<form id='$this->nameForm' method='post' action='' enctype='multipart/form-data'>\n";
-		// $this->cHTML .= "\n<form id='$this->nameForm' method='post' action='' novalidate='novalidate'>\n";
 		
 		// $this->cHTML .= "<div class='container-fluid' $attr>\n\n";
-		$this->cHTML .= "<div $attr>\n\n";
+		$this->cHTML .= "<div id='box_$this->nameForm' $attr>\n\n";
 		
 		$this->iParent =0;
 		$this->aParent[$this->iParent]["ComponentName"] = "form";
@@ -374,6 +374,7 @@ class Forms extends baseContainer{
 		$placeholder = "@".$this->iCascade."AABBCC@";
 		
 		$this->aCascade["$nameGroupCascade"][] = Array("0"=>$nameGroupCascade, "1"=>$placeholder, "2"=>$paramOnChange, "3"=>$actualValue, "4"=>$callFunc);
+		// $this->aCascade["$nameGroupCascade"][$this->iCascade] = Array("0"=>$nameGroupCascade, "1"=>$placeholder, "2"=>$paramOnChange, "3"=>$actualValue, "4"=>$callFunc);
 		
 		$aRet=Array($this->iCascade, $placeholder );
 		
@@ -879,12 +880,12 @@ class DBComboBoxCascade extends baseInput {
 		
 		$parentVal = $this->meForm->getCascade($nameGroup);
 		
-		if ( $parentVal > ""){
+	
+		if ( $aParamOnChange[0]>0){
 			$q="SELECT $tbKey, $tbDescr FROM $tbRef WHERE $tbParentKey='$parentVal' ORDER BY $tbOrder";
 		}else{
 			$q="SELECT $tbKey, $tbDescr FROM $tbRef ORDER BY $tbOrder";
 		}
-
 
 		$this->cHTML .= "<option value=''></option>";  // Aggiungo riga vuota 
 		
@@ -981,12 +982,11 @@ class DBIcon extends baseInput {
 		$attr=$this->AttributesToString();
 		
 		$this->cHTML .=  "      <div id='_id_main$this->nameBase' ondrop='_drop_icon(event)' ondragover='_allowDrop_icon(event)' >\n";
-		$this->cHTML .=  "        <img src='$this->data' id='_id_prew$this->nameBase' $attr >\n";
+		$this->cHTML .=  "        <img src='$this->data' id='_id_prew$this->nameBase' $attr />\n";
 		$this->cHTML .=  "        <div style='text-align:center'>$descr</div>"; 
 		$this->cHTML .=  "      </div>\n";
+		$this->cHTML .=  "      <input type='text' name='$this->nameBase' id='_id_text$this->nameBase' onchange='javascript:_changeIcon(this)' style='display:none;' value='$this->data' />\n";
 		
-		// For reset 
-		// $this->cHTML .=  "      <input type='text' name='$this->nameBase' id='_id_text$this->nameBase' onchange='javascript:_changeIcon(this)' style='display:none;' value='$this->data' />\n";
 
 		return (true);
 	}
