@@ -238,7 +238,7 @@
 		var centerAt = new Microsoft.Maps.Location(lat,lon);
 	 
 		this.map = new Microsoft.Maps.Map('#'+t.id, {
-			credentials: '------ YOUR KEY BING HERE !!!!! ------',    // PLEASE INSERT YOUR CREDENTIALS !!!!!
+			credentials: '------ YOUR BING KEY HERE !!!!! ------',    // PLEASE INSERT YOUR CREDENTIALS !!!!!
 			center: centerAt,
 			mapTypeId: Microsoft.Maps.MapTypeId.road,
 			zoom: 12
