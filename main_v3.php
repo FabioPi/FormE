@@ -3,6 +3,7 @@
 	include ("lib/FormE.class.php");
 	include ("lib/FormE.func.php");
 	
+	// User PHP Function
 	function AnagModForm($dataTable){
 		
 		@list($ipStart, $ipEnd) = explode ( "-", $dataTable["ANAIp"]);
@@ -64,9 +65,12 @@
 	<?php
 		//$myForm = new Forms("testLevel.xml");
 		
-		$myForm = new Forms("frmAnag5_horizontal.xml", "ANAId=1");
+		// $myForm = new Forms("frmAnag5_horizontal.xml", "ANAId=1");
+		$seek = !isset($_GET["ANAID"]) ? "false" : "ANAId=".$_GET["ANAID"];
+		$myForm = new Forms($_GET["xml"], $seek );
+		
 		// $myForm = new Forms("frmAnag5_block.xml", "ANAId=1");   // update records with ANAID=1
-		// $myForm = new Forms("frmAnag5_block.xml");           // Insert NEW Record 
+		// $myForm = new Forms("frmAnag5_block.xml");              // Insert NEW Record 
 		$myForm->registerCallbackFuncForm("AnagModForm","");    // callableFunction, optionalParameters  -> at composite of form
 		$myForm->registerCallbackFuncPost("AnagModPost");       // callableFunction  -> at post fase . include the function in formPost.php
 		
@@ -127,16 +131,13 @@
     });
 	 
     
+	 
 	// 
 	// USER Javascript Function 
 	// 
-	
-	// function loadSearch(param){ alert (param); }
-	
+
 	function showSearch(t) { alert ( "you have select: "+$("#_id_srch_frmAnagrafica_ANASearch").val() ); }
-	
-	// function funcAA(tab, desc){ alert("sto in on load"); }
-	
+
 	function showMap(t){
 		var q="";
 		switch(t.id) {
