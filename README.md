@@ -187,12 +187,12 @@ DBOption parameters
      </DBComboBoxCascade>	
    </boxInput>
 			
-  <boxInput x-col="3">
-				<label>Citta</label>
-				<DBComboBoxCascade size="1" placeholder="Citta" x-cbCascade="grpAA" x-valid="showMap">ANAG_CTId
-					<DBOption x-tbRef="Citta" x-tbKey="CTId" x-tbDescr="CTDescr" x-tbOrder="CTDescr" x-tbParentKey="STId"></DBOption>
-				</DBComboBoxCascade>	
-			</boxInput>
+   <boxInput x-col="3">
+     <label>Citta</label>
+     <DBComboBoxCascade size="1" placeholder="Citta" x-cbCascade="grpAA" x-valid="showMap">ANAG_CTId
+        <DBOption x-tbRef="Citta" x-tbKey="CTId" x-tbDescr="CTDescr" x-tbOrder="CTDescr" x-tbParentKey="STId"></DBOption>
+     </DBComboBoxCascade>	
+   </boxInput>
 ```
 DbComboBoxCascade is an extension of DbComboBox and use for linked combobox			
 - x-cbCascade = Identifier of linked group of combobox (obbligatory), the order in xml file is important !
@@ -204,13 +204,13 @@ example Stato: (select * from Stato where Stato.STId=ANAGR.ANAG_STId and Stato.C
 
 ### DBSearch
 ```
-	<DBSearch placeholder="Search..." x-valid="showSearch" x-SearchTable='Stato' x-SearchField='STDescr' x-SearchReturn='STDescr'>ANASearch
-		<DBSearchReturn>
-			<span>
-				<img src="img/@STFlag@"/>  @STDescr@
-			</span>
-		</DBSearchReturn>  
-	</DBSearch> 
+   <DBSearch placeholder="Search..." x-valid="showSearch" x-SearchTable='Stato' x-SearchField='STDescr' x-SearchReturn='STDescr'>ANASearch
+     <DBSearchReturn>
+	<span>
+	  <img src="img/@STFlag@"/>  @STDescr@
+	</span>
+     </DBSearchReturn>  
+   </DBSearch> 
 ```
 DBSearch is a text control that auto-populate in according with text entered
 
@@ -223,28 +223,29 @@ DBSearchReturn: contain a block of data for populate the window that appear in b
 
 ### DBSearch
 ```
-		<DBInputFile placeholder="File" x-upload="upload2">ANAlinkFile1</DBInputFile> 
+   <DBInputFile placeholder="File" x-upload="upload2">ANAlinkFile1</DBInputFile> 
 ```
 Upload a File 
 - x-upload = Directory where the file are uploaded, if not specified the default value is stored in FormE.ini.php
 
 ### DBMapBing
 ```
-	<DBMapBing style="width:400px; height:400px">ANAMap</DBMapBing> 
+   <DBMapBing style="width:400px; height:400px">ANAMap</DBMapBing> 
 ```
 Show a map in your page. Look the examples for a simple use of that control. 
 
 ### DBIcon
 ```
-	<DBIcon style="width:150px; height:150px" x-descr="[drag here !!]">ANAAvatar2</DBIcon>
+   <DBIcon style="width:150px; height:150px" x-descr="[drag here !!]">ANAAvatar2</DBIcon>
 ```
 Small images in MySql table, use LONGTEXT. Drag and Drop into this control 
 
 ### DBTextArea
 ```
-	<DBTextArea rows="8" cols="200">ANANote</DBTextArea>
+   <DBTextArea rows="8" cols="200">ANANote</DBTextArea>
 ```
-+1
+
++1)
 
 
 
