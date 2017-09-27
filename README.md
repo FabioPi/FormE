@@ -99,12 +99,17 @@ OR
 
 - in input tag, the "name" and "id", is assigned automatically by system. Is not possible assign your own.
 - attribute "x-" are particulary of the system, and add information at the corresponding HTML tag
+- you can use style, class, and attribute in according with corresponding html tag like: width, height, size, multiple, checked, disabled, readonly, etc....
+
+---
 
 ### Label:
 ```
    <label>Name</label>
 ```
 label of Input
+
+---
 
 ### DBInput
 ```
@@ -122,6 +127,8 @@ label of Input
 - data-mask : refer to [igorescobar - plugin](http://igorescobar.github.io/jQuery-Mask-Plugin/docs.html) (optional)
 - ANAName/IPEnd: Corresponding column in MySql Table specified in form->x-table
 
+---
+
 ### DBInput2 
 ```
    <DBInput2 placeholder="Nome" x-image="user">ANANome</DBInput2> 
@@ -129,12 +136,16 @@ label of Input
 like input with image 
 - x-image = specify the icon at the left of input [fontawesome](http://fontawesome.io/icons/)
 
+---
+
 ### DBDateIT / DBDateEN
 ```
    <DBDateEN data-defaultViewDate="today">ANADtIscr</DBDateEN> 
 ```
 Input date with notation dd-mm-yyyy (IT)  or mm/dd/yyyy (EN).
 It is possible specify many other parameters according with [bootstrap-datepicker](https://bootstrap-datepicker.readthedocs.io/en/latest/options.html#)
+
+---
 
 ### DBCheck
 ```
@@ -144,6 +155,8 @@ It is possible specify many other parameters according with [bootstrap-datepicke
 ```
 - x-descr = Description of checkbox
 - x-states = Value True and False to write in Database (syntax:True|False)
+
+---
 
 ### DBRadio
 ```
@@ -155,6 +168,8 @@ It is possible specify many other parameters according with [bootstrap-datepicke
      <option value="AM">Americano</option>
 </DBRadio>	
 ```
+
+---
 
 ### DBComboBox
 ```
@@ -170,6 +185,7 @@ DBOption parameters
 
 (select * from Dug where Dug.DUGId=ANAGR.ANAGR_DUGId order by Dug.DUGDescr)
 
+---
 
 ### DBComboBoxCascade
 ```
@@ -202,6 +218,8 @@ DBOption
 
 example Stato: (select * from Stato where Stato.STId=ANAGR.ANAG_STId and Stato.COId=ANAGR.ANAG_COId order by Stato.STDescr)
 
+---
+
 ### DBSearch
 ```
    <DBSearch placeholder="Search..." x-valid="showSearch" x-SearchTable='Stato' x-SearchField='STDescr' x-SearchReturn='STDescr'>ANASearch
@@ -221,12 +239,16 @@ DBSearch is a text control that auto-populate in according with text entered
 
 DBSearchReturn: contain a block of data for populate the window that appear in bottom at text control, it is crypted with a key that you have specified in FormE.ini.php
 
-### DBSearch
+---
+
+### DBInputFile
 ```
    <DBInputFile placeholder="File" x-upload="upload2">ANAlinkFile1</DBInputFile> 
 ```
 Upload a File 
 - x-upload = Directory where the file are uploaded, if not specified the default value is stored in FormE.ini.php
+
+---
 
 ### DBMapBing
 ```
@@ -234,18 +256,22 @@ Upload a File
 ```
 Show a map in your page. Look the examples for a simple use of that control. 
 
+---
+
 ### DBIcon
 ```
    <DBIcon style="width:150px; height:150px" x-descr="[drag here !!]">ANAAvatar2</DBIcon>
 ```
 Small images in MySql table, use LONGTEXT. Drag and Drop into this control 
 
+---
+
 ### DBTextArea
 ```
    <DBTextArea rows="8" cols="200">ANANote</DBTextArea>
 ```
 
-+1)
+:+1:
 
 
 
